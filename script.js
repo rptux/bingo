@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cartela = [];
         cartelaCharlie = [];
 
-        // Gerar 10 números aleatórios entre 0 e 50 para a cartela do jogador
+        // Gerar 10 números aleatórios entre 1 e 50 para a cartela do jogador
         while (cartela.length < 10) {
             let numero = gerarNumeroAleatorio(50);
             if (!cartela.includes(numero)) {
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Gerar 10 números aleatórios entre 0 e 50 para a cartela do Charlie
+        // Gerar 10 números aleatórios entre 1 e 50 para a cartela do Charlie
         while (cartelaCharlie.length < 10) {
             let numero = gerarNumeroAleatorio(50);
             if (!cartelaCharlie.includes(numero)) {
@@ -44,7 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
         cartela.forEach(num => {
             const cell = document.createElement('div');
             cell.classList.add('bingo-cell');
-            cell.textContent = num;
+            const cellContent = document.createElement('div');
+            cellContent.textContent = num;
+            cellContent.classList.add('cell-content');
+            cell.appendChild(cellContent);
             cell.addEventListener('click', () => cell.classList.toggle('selected'));
             board.appendChild(cell);
         });
@@ -52,7 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
         cartelaCharlie.forEach(num => {
             const cell = document.createElement('div');
             cell.classList.add('bingo-cell');
-            cell.textContent = num;
+            const cellContent = document.createElement('div');
+            cellContent.textContent = num;
+            cellContent.classList.add('cell-content');
+            cell.appendChild(cellContent);
             boardCharlie.appendChild(cell);
         });
 
@@ -83,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            setTimeout(sortearNumero, 6000); // 6 segundos até o próximo sorteio
+            setTimeout(sortearNumero, 5000); // 5 segundos até o próximo sorteio
         } else {
             sortearNumero();
         }
@@ -98,4 +104,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     createBoard();
 });
-
