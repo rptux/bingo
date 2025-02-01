@@ -1,0 +1,42 @@
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#jogador-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+#bingo-board, #bingo-board-charlie {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.bingo-cell {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.bingo-cell.selected {
+    background-color: yellow;
+}
+
+#sorteio-numeros, #numeros-sorteados {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
